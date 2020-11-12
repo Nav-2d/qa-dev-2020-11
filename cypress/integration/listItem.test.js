@@ -8,7 +8,7 @@ const todoTitles = [
 ];
 
 const validText = 'Test - "Valid Data"';
-const shortText = 'Wrong - 2';
+const shortText = 'Wrong - !';
 const longText = 'Prince Edward Island - "Love"';
 
 describe('List Item Application', () => {
@@ -83,7 +83,7 @@ describe('List Item Application', () => {
       cy.findByText('Title must be at least 10 characters.').should('exist');
     });
 
-    it('validates for text item title more than 10 characters', function () {
+    it('validates for text item title more than 20 characters', function () {
       cy.get('input#title').clear().type(longText);
 
       cy.findByText('Add Item').click();
